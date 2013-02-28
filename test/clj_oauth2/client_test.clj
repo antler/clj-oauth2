@@ -1,15 +1,16 @@
 (ns clj-oauth2.client-test
   (:use [lazytest.describe]
         [lazytest.expect :only (expect)]
-        [clojure.data.json :only [json-str]]
         [clojure.pprint :only [pprint]])
   (:require [clj-oauth2.client :as base]
+            [clojure.data.json :as json]
             [ring.adapter.jetty :as ring]
             [uri.core :as uri]
             [clojure.string :as str])
   (:import [clj_oauth2 OAuth2Exception OAuth2StateMismatchException]
            [org.apache.commons.codec.binary Base64]))
 
+(def json-str json/write)
 
 (defn throws?
   [c f & [e]]

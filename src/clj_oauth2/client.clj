@@ -1,12 +1,14 @@
 (ns clj-oauth2.client
   (:refer-clojure :exclude [get])
-  (:use [clj-http.client :only [wrap-request]]
-        [clojure.data.json :only [read-json]])
+  (:use [clj-http.client :only [wrap-request]])
   (:require [clj-http.client :as http]
             [clojure.string :as str]
+            [clojure.data.json :as json]
             [uri.core :as uri])
   (:import [clj_oauth2 OAuth2Exception OAuth2StateMismatchException]
            [org.apache.commons.codec.binary Base64]))
+
+(def read-json json/read)
 
 (defn make-auth-request
   [{:keys [authorization-uri client-id client-secret redirect-uri scope]}

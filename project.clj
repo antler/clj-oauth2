@@ -1,9 +1,10 @@
-(defproject antler/clj-oauth2 "0.3.0"
+(defproject antler/clj-oauth2 "0.4.0"
   :description "clj-http and ring middlewares for OAuth 2.0"
   :dependencies [[org.clojure/clojure "1.3.0"]
-                 [org.clojure/data.json "0.1.1"]
+                 [org.clojure/data.json "0.2.1"]
                  [clj-http "0.2.6"]
                  [uri "1.1.0"]
+                 [ring/ring-codec "1.0.0"]
                  [commons-codec/commons-codec "1.6"]]
   :exclusions   [org.clojure/clojure-contrib]
   :dev-dependencies [[ring "0.3.11"]
