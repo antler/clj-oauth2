@@ -8,7 +8,7 @@
   (:import [clj_oauth2 OAuth2Exception OAuth2StateMismatchException]
            [org.apache.commons.codec.binary Base64]))
 
-(def read-json json/read)
+(def read-json json/read-str)
 
 (defn make-auth-request
   [{:keys [authorization-uri client-id client-secret redirect-uri scope]}
