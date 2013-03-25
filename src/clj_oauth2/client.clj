@@ -75,7 +75,8 @@
         request (prepare-access-token-request request endpoint params)
         request (add-client-authentication request endpoint)
         request (update-in request [:body] uri/form-url-encode)
-        {:keys [body headers status]} (http/post access-token-uri request)
+        {:keys [body headers status] :as response} (http/post access-token-uri
+                                                              request)
         content-type (headers "content-type")
         body (if (and content-type
                       (or (.startsWith content-type "application/json")
